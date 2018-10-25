@@ -15,7 +15,7 @@
         function playGo() {
             let msgSSID = document.getElementById("inputSSID").value;
             let msgPW = document.getElementById("inputPW").value;
-            let msgText = '{"ssid":"' + msgSSID + '","pw":"' + msgPW + '"}';
+            let msgText = '{"s":"' + msgSSID + '","p":"' + msgPW + '"}';
             let bitStream = window.HDLC.encodeBitwise(msgText);
             window.FSKmodulator.generate(bitStream).then(function(audioData) {window.FSKmodulator.play(audioData)});
         }
@@ -23,13 +23,15 @@
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body onload="bodyOnload()">
-    <h1>SpeakUp - Send WiFi Details to a Thing</h1>
-    <form>
-        <label for="inputSSID">SSID:</label>
-        <input type="text" id="inputSSID"/>
-        <label for="inputPW">Password:</label>
-        <input type="password" id="inputPW"/>
-    </form>
-    <button onclick="playGo()">Play it to the Thing</button>
+    <div>
+        <h1>SpeakUp - Send WiFi Details to a Thing by Audio</h1>
+        <form>
+            <label for="inputSSID">SSID:</label>
+            <input type="text" id="inputSSID"/>
+            <label for="inputPW">Password:</label>
+            <input type="password" id="inputPW"/>
+        </form>
+        <button onclick="playGo()">Send it to the Thing</button>
+    </div>
 </body>
 </html>

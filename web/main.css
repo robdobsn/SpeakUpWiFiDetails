@@ -1,6 +1,12 @@
 body {
+    background-color: white;
+    padding: 10px 10px;
+}
+
+body div {
     background-color: rgb(0, 43, 54);
-    padding: 15px 50px;
+    padding:20px;
+    border-radius: 10px;
 }
 
 h1, h2, h3, h4, p, textarea, button, code, a.button, label {
@@ -58,4 +64,3 @@ label, input {
     width: 100%;
     margin-top: 5px;
 }
-
